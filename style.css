@@ -112,7 +112,7 @@ img {
 .hero-photo {
   position: absolute;
   inset: 0;
-  background-image: url("vivian.jpg");
+  background-image: url("vivian.jpg.jpeg");
   background-size: cover;
   background-position: center top;
 }
