@@ -1,3 +1,7 @@
+/* =========================
+   BASE
+========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,8 +14,8 @@ html {
 
 body {
   font-family: "DM Sans", Arial, sans-serif;
-  background: #f7f3ed;
-  color: #302735;
+  background: #f8f4ee;
+  color: #241d29;
   line-height: 1.6;
 }
 
@@ -45,9 +49,9 @@ a {
 }
 
 .logo-mark {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255,255,255,.8);
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,.85);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -64,10 +68,16 @@ a {
 }
 
 .header-button {
-  border: 1px solid rgba(255,255,255,.8);
-  padding: 9px 16px;
+  border: 1px solid rgba(255,255,255,.85);
+  padding: 9px 17px;
   border-radius: 30px;
   font-size: 12px;
+  transition: .3s ease;
+}
+
+.header-button:hover {
+  background: white;
+  color: #35233d;
 }
 
 
@@ -96,17 +106,19 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  display: block;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(38, 25, 44, .94),
-    rgba(38, 25, 44, .52) 50%,
-    rgba(38, 25, 44, .08)
-  );
+  background:
+    linear-gradient(
+      to top,
+      rgba(42, 27, 48, .96),
+      rgba(53, 35, 61, .62) 52%,
+      rgba(53, 35, 61, .08)
+    );
   z-index: 1;
 }
 
@@ -137,7 +149,7 @@ a {
   margin-top: 24px;
   font-size: 16px;
   line-height: 1.7;
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.92);
 }
 
 .primary-button {
@@ -145,12 +157,18 @@ a {
   align-items: center;
   gap: 15px;
   margin-top: 28px;
-  padding: 15px 20px;
-  background: #6f4b8b;
+  padding: 15px 21px;
+  background: #76508d;
   color: white;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 13px;
   font-weight: 700;
+  transition: .3s ease;
+}
+
+.primary-button:hover {
+  background: #8a62a0;
+  transform: translateY(-2px);
 }
 
 .primary-button span {
@@ -174,12 +192,12 @@ a {
 
 .section-number {
   font-size: 11px;
-  color: #9a8f9e;
+  color: #9b8da1;
   margin-bottom: 22px;
 }
 
 .purple {
-  color: #6f4b8b;
+  color: #76508d;
 }
 
 .section h2,
@@ -194,7 +212,7 @@ a {
 
 .section-text {
   max-width: 620px;
-  color: #6a606d;
+  color: #675d69;
   font-size: 16px;
   margin-top: 18px;
 }
@@ -202,11 +220,17 @@ a {
 .text-button {
   display: inline-block;
   margin-top: 25px;
-  color: #6f4b8b;
+  color: #76508d;
   font-size: 13px;
   font-weight: 700;
-  border-bottom: 1px solid #6f4b8b;
+  border-bottom: 1px solid #76508d;
   padding-bottom: 4px;
+  transition: .3s ease;
+}
+
+.text-button:hover {
+  color: #4d315b;
+  border-color: #4d315b;
 }
 
 
@@ -217,6 +241,7 @@ a {
 .discovery {
   max-width: 1000px;
   margin: auto;
+  background: #f8f4ee;
 }
 
 
@@ -225,7 +250,7 @@ a {
 ========================= */
 
 .programs {
-  background: white;
+  background: #ffffff;
 }
 
 .cards {
@@ -238,23 +263,29 @@ a {
 
 .card {
   padding: 38px;
-  background: #faf8f6;
-  border: 1px solid #e7e0e7;
+  background: #fbf9f6;
+  border: 1px solid #e5dce7;
   min-height: 350px;
   display: flex;
   flex-direction: column;
+  transition: .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #d3bfd9;
 }
 
 .card.featured {
-  background: #eee6f2;
-  border-color: #d8c8df;
+  background: #eee5f2;
+  border-color: #d7c3dd;
 }
 
 .card-tag,
 .simple-card > span {
   font-size: 10px;
   letter-spacing: 2px;
-  color: #756a79;
+  color: #766a7b;
   font-weight: 700;
 }
 
@@ -268,7 +299,7 @@ a {
 
 .card p,
 .simple-card p {
-  color: #6b626d;
+  color: #6a606d;
   font-size: 14px;
   margin-top: 14px;
   max-width: 450px;
@@ -282,12 +313,13 @@ a {
 .card-bottom strong {
   display: block;
   font-size: 21px;
+  color: #35233d;
 }
 
 .card-bottom small {
   display: block;
   font-size: 11px;
-  color: #756a79;
+  color: #756979;
   margin-top: 3px;
 }
 
@@ -295,7 +327,7 @@ a {
 .simple-card a {
   display: inline-block;
   margin-top: 17px;
-  color: #6f4b8b;
+  color: #76508d;
   font-size: 13px;
   font-weight: 700;
 }
@@ -308,6 +340,7 @@ a {
 .skills {
   max-width: 1100px;
   margin: auto;
+  background: #f8f4ee;
 }
 
 .simple-cards {
@@ -319,32 +352,39 @@ a {
 
 .simple-card {
   padding: 35px;
-  border: 1px solid #e2dbe2;
-  background: transparent;
+  border: 1px solid #ded3e1;
+  background: rgba(255,255,255,.35);
   min-height: 280px;
+  transition: .3s ease;
+}
+
+.simple-card:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
 }
 
 
 /* =========================
-   NUGGETS
+   VIVIAN'S NUGGETS
 ========================= */
 
 .nuggets {
   padding: 105px 7%;
-  background: #e7ddea;
+  background: #e5d7eb;
 }
 
 .light {
-  color: #70577d;
+  color: #654b72;
 }
 
 .nuggets h2 {
   max-width: 700px;
+  color: #302435;
 }
 
 .nuggets > p:not(.eyebrow) {
   max-width: 540px;
-  color: #625867;
+  color: #5f5364;
   margin-top: 20px;
 }
 
@@ -352,11 +392,17 @@ a {
   display: inline-block;
   margin-top: 28px;
   padding: 14px 20px;
-  background: #302735;
+  background: #35233d;
   color: white;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 13px;
   font-weight: 700;
+  transition: .3s ease;
+}
+
+.light-button:hover {
+  background: #76508d;
+  transform: translateY(-2px);
 }
 
 
@@ -372,6 +418,7 @@ a {
   grid-template-columns: .8fr 1.2fr;
   gap: 65px;
   align-items: center;
+  background: #f8f4ee;
 }
 
 .about-image img {
@@ -379,6 +426,7 @@ a {
   max-height: 520px;
   object-fit: cover;
   object-position: center top;
+  display: block;
 }
 
 .about-content > p:not(.eyebrow) {
@@ -395,17 +443,21 @@ a {
 .final-cta {
   padding: 105px 7%;
   text-align: center;
-  background: #302735;
+  background: #35233d;
   color: white;
 }
 
 .final-cta .eyebrow {
-  color: #cdb9d7;
+  color: #d6c1de;
 }
 
 .final-cta h2 {
   max-width: 760px;
   margin: auto;
+}
+
+.final-cta .primary-button {
+  margin-top: 30px;
 }
 
 
@@ -416,7 +468,7 @@ a {
 footer {
   text-align: center;
   padding: 40px 20px;
-  background: #302735;
+  background: #35233d;
   color: rgba(255,255,255,.7);
   border-top: 1px solid rgba(255,255,255,.12);
 }
@@ -492,6 +544,10 @@ footer small {
 
   .about {
     gap: 40px;
+  }
+
+  .about-image img {
+    max-height: 450px;
   }
 
 }
