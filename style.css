@@ -4,115 +4,446 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #f7f3ed;
   color: #2b2230;
+  line-height: 1.6;
 }
 
-.page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.hero-section {
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 520px;
-  min-height: 100vh;
-  padding: 35px 24px 45px;
-  text-align: center;
+  padding: 22px 5%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo-name {
+  font-size: 11px;
+  line-height: 1.05;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header nav a {
+  font-size: 13px;
+}
+
+.nav-cta {
+  border: 1px solid rgba(255,255,255,0.8);
+  padding: 10px 17px;
+  border-radius: 30px;
+  font-size: 12px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 720px;
+  height: 88vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: white;
 }
 
 .hero-photo {
-  width: 145px;
-  height: 145px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 50%;
-  border: 5px solid white;
-  box-shadow: 0 10px 30px rgba(60, 40, 70, 0.15);
-  margin-bottom: 22px;
+  position: absolute;
+  inset: 0;
+  background-image: url("vivian.jpg");
+  background-size: cover;
+  background-position: center top;
 }
 
-.brand {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  color: #6f4b8b;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 18, 35, 0.92) 0%,
+    rgba(30, 18, 35, 0.55) 45%,
+    rgba(30, 18, 35, 0.12) 100%
+  );
 }
 
-.byline {
-  font-size: 14px;
-  margin-top: 5px;
-  color: #766b79;
-}
-
-h1 {
-  font-family: Georgia, serif;
-  font-size: 38px;
-  line-height: 1.12;
-  margin-top: 28px;
-  max-width: 470px;
-}
-
-h1 span {
-  color: #6f4b8b;
-}
-
-.hero-text {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #625966;
-  max-width: 430px;
-  margin-top: 20px;
-}
-
-.assessment-button {
-  display: block;
+.hero-content {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  max-width: 430px;
+  max-width: 850px;
+  padding: 80px 7% 85px;
+}
+
+.hero-label {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(45px, 7vw, 82px);
+  line-height: 0.98;
+  max-width: 780px;
+  letter-spacing: -2px;
+}
+
+.hero p {
+  max-width: 570px;
+  margin-top: 25px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
   margin-top: 30px;
-  padding: 17px 20px;
+  padding: 15px 22px;
   background: #6f4b8b;
   color: white;
-  text-decoration: none;
-  border-radius: 14px;
-  font-size: 15px;
-  font-weight: 700;
-  box-shadow: 0 10px 25px rgba(111, 75, 139, 0.22);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.25s ease;
 }
 
-.assessment-button:hover {
+.primary-btn:hover {
   transform: translateY(-2px);
 }
 
-.small-note {
-  font-size: 12px;
-  color: #8a808d;
-  margin-top: 12px;
+/* =========================
+   INTRO
+========================= */
+
+.intro-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 110px 7%;
 }
 
-@media (max-width: 480px) {
+.section-label {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  color: #6f4b8b;
+  margin-bottom: 15px;
+}
 
-  .hero-section {
-    padding: 30px 20px 40px;
+.intro-section h2,
+.section-heading h2,
+.nuggets-section h2,
+.about-content h2,
+.final-cta h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.intro-section > p:not(.section-label) {
+  max-width: 650px;
+  margin-top: 22px;
+  color: #665d68;
+  font-size: 17px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 25px;
+  color: #6f4b8b;
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: 1px solid #6f4b8b;
+  padding-bottom: 4px;
+}
+
+/* =========================
+   PROGRAMS
+========================= */
+
+.programs-section {
+  background: white;
+  padding: 110px 7%;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 55px;
+}
+
+.section-heading > p:last-child {
+  margin-top: 20px;
+  color: #6b626c;
+  max-width: 570px;
+}
+
+.program-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.program-card {
+  padding: 38px;
+  border: 1px solid #e5dfe6;
+  background: #fbfaf8;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.program-card.featured {
+  background: #f0e9f4;
+  border-color: #d8c8df;
+}
+
+.card-number {
+  font-size: 11px;
+  color: #8c8190;
+  margin-bottom: 30px;
+}
+
+.program-card h3 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.card-hook {
+  color: #6f4b8b !important;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.program-card p {
+  color: #6a616c;
+  font-size: 14px;
+  max-width: 430px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.included {
+  font-size: 12px !important;
+  margin-top: 4px;
+}
+
+.card-button {
+  margin-top: auto;
+  padding-top: 22px;
+  color: #6f4b8b;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* =========================
+   NUGGETS
+========================= */
+
+.nuggets-section {
+  padding: 115px 7%;
+  background: #e9e0ed;
+}
+
+.nuggets-section > p:not(.section-label) {
+  max-width: 520px;
+  margin-top: 22px;
+  color: #625866;
+}
+
+.dark-button {
+  background: #2b2230;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 115px 7%;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-content p:not(.section-label) {
+  margin-top: 25px;
+  color: #665d68;
+  font-size: 16px;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta {
+  text-align: center;
+  padding: 120px 7%;
+  background: #2b2230;
+  color: white;
+}
+
+.final-cta .section-label {
+  color: #cdb9d7;
+}
+
+.final-cta h2 {
+  max-width: 750px;
+  margin: auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  padding: 45px 20px;
+  background: #2b2230;
+  color: rgba(255,255,255,0.75);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+footer strong {
+  color: white;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+footer p {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+footer small {
+  display: block;
+  margin-top: 18px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .header {
+    padding: 18px 20px;
   }
 
-  .hero-photo {
-    width: 125px;
-    height: 125px;
+  .header nav {
+    display: none;
   }
 
-  h1 {
-    font-size: 32px;
+  .nav-cta {
+    padding: 9px 13px;
   }
 
-  .hero-text {
+  .hero {
+    min-height: 680px;
+    height: 90vh;
+  }
+
+  .hero-content {
+    padding: 50px 24px 55px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero p {
     font-size: 15px;
+  }
+
+  .intro-section,
+  .programs-section,
+  .nuggets-section,
+  .about-section,
+  .final-cta {
+    padding: 80px 24px;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card {
+    min-height: 300px;
+    padding: 30px;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
 }
